@@ -1,5 +1,5 @@
 import SubmitBtn from './submit-btn';
-import prisma from '@prisma/client';
+import { PrismaClient } from '@prisma/client/';
 import { revalidatePath } from 'next/cache';
 
 export default function AddPostForm() {
@@ -8,7 +8,7 @@ export default function AddPostForm() {
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
-        await prisma.post.create({
+        await PrismaClient.post.create({
             data: {
                 title: formData.get("title") as string,
                 body: formData.get("body") as string,

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import prisma from '@prisma/client';
 
+type PostsListsProps = {
+    posts: Post[];
+};
 
-export default async function PostsList() {
-await new Promise(resolve => setTimeout(resolve, 1000));
-    const posts = await prisma.post.findMany();
+export default function PostsList({ posts }: PostsListsProps) {
     return (
         <>
             <ul>
@@ -14,8 +14,7 @@ await new Promise(resolve => setTimeout(resolve, 1000));
                             {post.title}
                         </Link>
                     </li>
-                )
-                )}
+                ))}
         </ul>
         </>
     )

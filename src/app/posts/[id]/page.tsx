@@ -1,4 +1,4 @@
-
+import { notFound } from "next/navigation";
 
 type PostPageProps = {
     params: {
@@ -10,6 +10,9 @@ export default async function PostsPage({ params }: PostPageProps) {
     const response = await fetch(`https://dummyjson.com/posts/${params.id}`);
     const data = await response.json();
 
+    if (!post.title) {
+        return notFound();
+    }
     return (
         <main className="text-center pt-24 px-7">
             <h1 className="text-5xl font-semibold mb-7">{data.title}</h1>

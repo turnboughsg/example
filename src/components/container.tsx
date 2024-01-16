@@ -1,10 +1,11 @@
+type ContainerProps = {
+    children: React.ReactNode;
+};
 
-
-
-
-
-export default function Container() {
+export default function Container({ children }: ContainerProps) {
     return (
-        <br />
-    )
+        <div className="max-w-[1100px] mx-auto bg-white min-h-screen flex flex-col border-l border-r">
+            {children}
+        </div>
+    );
 }
