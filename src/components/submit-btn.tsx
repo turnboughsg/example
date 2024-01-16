@@ -9,7 +9,7 @@ export default function SubmitBtn() {
             type="submit"
             disabled={pending}
             className="bg-zinc-900 disabled:bg-zinc-500 transition text-white font-bold py-2 px-3 rounded">
-            Submit New Post
+            Create New Post
         </button>
     )
 };

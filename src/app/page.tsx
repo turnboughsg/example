@@ -1,17 +1,21 @@
-import Image from 'next/image'
+import { generateServerClientUsingCookies } from "@aws-amplify/adapter-nextjs/api";
+import { cookies } from "next/headers";
+import config from "@/amplifyconfiguration.json";
+import AddPostForm from "@/components/add-post-form";
 
-export default function Home() {
+
+const cookiesClient = generateServerClientUsingCookies({
+  config,
+  cookies
+});
+
+export default async function Home() {
   return (
-    <main className='text-center pt-48 px-5'>
-      <h1 className='text-4xl md:text-5xl font-bold mb-5'>
-        Welcome to my blog
+    <main className="text-center pt-48 px-5">
+      <h1 className="text-4xl md:text-5xl font-bold mb-5">
+        Welcome to Dax&apos;s Blog
       </h1>
-      <p className='max-w-[750px] mx-auto leading-8'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        voluptatem, voluptatum, quas, quod, voluptates dolorum quibusdam
-        voluptate eum voluptatibus consequatur laboriosam. Quo, quos. Quibusdam
-        voluptatibus consequatur laboriosam. Quo, quos.
-      </p>
+      <AddPostForm />
     </main>
   )
 }
