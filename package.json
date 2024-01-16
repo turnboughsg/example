@@ -12,7 +12,9 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.0.12",
     "@prisma/client": "^5.8.1",
+    "aws-amplify": "^6.0.12",
     "next": "14.0.4",
     "node": "^21.2.0",
     "react": "^18",
