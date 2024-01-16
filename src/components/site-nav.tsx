@@ -15,6 +15,14 @@ const siteRoutes = [
         label: "About",
         href: "/about"
     },
+    {
+        label: "Paintings",
+        href: "/paintings"
+    },
+    {
+        label: "Login",
+        href: "/login"
+    },
 ];
 
 export default function SiteNav() {
